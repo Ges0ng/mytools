@@ -3,20 +3,12 @@ package org.example;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.aliyun.odps.udf.UDF;
-import com.sun.deploy.net.HttpResponse;
-import com.sun.deploy.util.BlackList;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.text.StrBuilder;
 import org.mozilla.universalchardet.UniversalDetector;
-import org.python.util.PythonInterpreter;
 
 import java.io.*;
-import java.nio.charset.StandardCharsets;
 import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ThreadPoolExecutor;
 
 /**
  * @author zhanggh
@@ -25,7 +17,7 @@ import java.util.concurrent.ThreadPoolExecutor;
  */
 public class JsonParseDemo extends UDF {
 
-    private static String fileName = "500000_0103";
+    private static final String fileName = "500000_0103";
 
     /**
      * 读取的文件地址
@@ -64,8 +56,6 @@ public class JsonParseDemo extends UDF {
             //开始时间
             startTime.set(System.currentTimeMillis());
             content = jsonParse_gaodeApi_name(read_path);
-        } catch (IOException e) {
-            e.printStackTrace();
         } catch (Exception e) {
             e.printStackTrace();
         }
