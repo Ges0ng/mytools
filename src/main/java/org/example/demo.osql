@@ -1,0 +1,2 @@
+set odps.sql.allow.fullscan=true;
+select count(*) from cq_sjzypt_dwd.stg_net_amp_live_profile_15min where dt=202106;
