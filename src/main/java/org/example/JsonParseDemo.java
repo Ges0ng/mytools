@@ -27,7 +27,7 @@ public class JsonParseDemo extends UDF {
     /**
      * 输出的文件地址
      */
-    private static final String WRITE_FILEPATH = "C:\\Users\\zgh98\\Desktop\\cq数据\\618json大区小区解析\\小区\\小区_rename1.txt";
+    private static final String WRITE_FILEPATH = "C:\\Users\\zgh98\\Desktop\\cq数据\\618json大区小区解析\\小区\\123.txt";
 
     /**
      * 用ThreadLocal记录过程时间
@@ -138,8 +138,8 @@ public class JsonParseDemo extends UDF {
         sb.append("name"+"\t"+"code"+"\t"+"type"+"\t"+"coordinates"+"\n");
 //        .append("month"+"\t"+"adcode"+"\n");
         //遍历数组数据
-//        for (int i = 0; i < features.size(); i++) {
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < features.size(); i++) {
+//        for (int i = 0; i < 100; i++) {
             //获取最外层features
             JSONObject singleFeatures = features.getJSONObject(i);
             //获取properties中的Name和code
@@ -147,25 +147,46 @@ public class JsonParseDemo extends UDF {
             Object name = singleFeatures.getJSONObject("properties").get("F");
             Object code = singleFeatures.getJSONObject("properties").get("ID");
             //type固定内容
-            Object type = "0103";
+            Object type = "0101";
             Object month = "202106";
             Object adcode = "500000";
             //遍历geometry获取coordinates
             Object coordinates = singleFeatures.getJSONObject("geometry").get("coordinates");
 
-            //api调用
+            //转换标准格式
             Object format = formatCoordinates(coordinates);
+            //转换中心点
             evaluate = AreaCoorsCenter.evaluate(format.toString());
+            //高德api接口获取
             String gaodeJson = ApiDoGet.doGet(evaluate);
-
+            //解析高德的json串
             JSONObject  gaodeJson_parse = JSONObject.parseObject(gaodeJson);
             Object formatted_address = gaodeJson_parse.getJSONObject("regeocode").get("formatted_address");
-            //拼接需要字段的字符串
-            sb.append(formatted_address).append("\t")
-                    .append(code).append("\t")
-                    .append(type).append("\t")
-                    .append(coordinates).append("\n");
-            System.out.println(new Date() + ":" + evaluate + "==" + formatted_address.toString() + "---" + i);
+            Object poiName = null;
+            try{
+                //如果没有poi站点会报错，取默认address
+                poiName = gaodeJson_parse.getJSONObject("regeocode").getJSONArray("pois").getJSONObject(0).get("name");
+            }catch (Exception e){
+                poiName = formatted_address;
+            }
+//            if (poiName.toString().contains("(建设中)")) {
+//                poiName = gaodeJson_parse.getJSONObject("regeocode").getJSONArray("pois").getJSONObject(1).get("name");
+//            }
+            try{
+                if (poiName.toString().contains("建设中") || poiName.toString().contains("暂停营业")) {
+                    poiName = gaodeJson_parse.getJSONObject("regeocode").getJSONArray("pois").getJSONObject(1).get("name");
+                }
+            }catch (Exception e){
+                poiName = formatted_address;
+            }
+
+                //拼接需要字段的字符串
+                sb.append(poiName).append("\t")
+                        .append(code).append("\t")
+                        .append(type).append("\t")
+                        .append(coordinates).append("\n");
+
+            System.out.println(new Date() + ":" + evaluate + "==" + poiName.toString() + "---" + i);
         }
         System.out.println(new Date() +"：json解析完成");
         return sb.toString();
