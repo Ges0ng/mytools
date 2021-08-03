@@ -17,17 +17,17 @@ import java.util.Date;
  */
 public class JsonParseDemo extends UDF {
 
-    private static final String fileName = "500000_0103";
+    private static final String fileName = "中区";
 
     /**
      * 读取的文件地址
      */
-    private static final String READ_FILEPATH = "C:\\Users\\zgh98\\Desktop\\cq数据\\618json大区小区解析\\小区\\" + fileName + ".geojson";
+    private static final String READ_FILEPATH = "C:\\Users\\zgh98\\Desktop\\cq数据\\7.16中区\\" + fileName + ".geojson";
 
     /**
      * 输出的文件地址
      */
-    private static final String WRITE_FILEPATH = "C:\\Users\\zgh98\\Desktop\\cq数据\\618json大区小区解析\\小区\\123.txt";
+    private static final String WRITE_FILEPATH = "C:\\Users\\zgh98\\Desktop\\cq数据\\7.16中区\\中区.txt";
 
     /**
      * 用ThreadLocal记录过程时间
@@ -39,14 +39,14 @@ public class JsonParseDemo extends UDF {
     public static void main(String[] args) {
 
         //解析json
-//        String content = jsonParse(READ_FILEPATH);
-//        System.out.println(content);
+        String content = jsonParse_name(READ_FILEPATH);
+        System.out.println(content);
 //        //输出到文件
 //        write(WRITE_FILEPATH, content);
 
 
 
-        gaodeApi(READ_FILEPATH,WRITE_FILEPATH);
+//        gaodeApi(READ_FILEPATH,WRITE_FILEPATH);
     }
 
 
@@ -67,9 +67,55 @@ public class JsonParseDemo extends UDF {
         startTime.remove();
     }
 
+    /**
+     * 解析json文件为String，name格式
+     * @param filePath
+     * @return
+     *
+     * fastjson
+     */
+    public static String jsonParse_name(String filePath){
+        //读取文件内容
+        String data = readFileContent(filePath);
+        // 解析内容
+        JSONObject jsonObject = JSONObject.parseObject(data);
+        //拿到features数组
+        JSONArray features = jsonObject.getJSONArray("features");
+
+        StringBuilder sb = new StringBuilder();
+        //拼接第一行的字段
+        sb.append("name"+"\t"+"code"+"\t"+"type"+"\t"+"coordinates"+"\n");
+//        .append("month"+"\t"+"adcode"+"\n");
+        //遍历数组数据
+        for (int i = 0; i < features.size(); i++) {
+            //获取最外层features
+            JSONObject singleFeatures = features.getJSONObject(i);
+            //获取properties中的Name和code
+            Object name = singleFeatures.getJSONObject("properties").get("Name");         //不同情况下
+            Object code = singleFeatures.getJSONObject("properties").get("code");
+//            Object name = singleFeatures.getJSONObject("properties").get("F");
+//            Object code = singleFeatures.getJSONObject("properties").get("ID");
+            //type固定内容
+            Object type = "0102";
+            Object month = "202106";
+            Object adcode = "500000";
+            //遍历geometry获取coordinates
+            Object geometry = singleFeatures.getJSONObject("geometry").get("coordinates");
+            //拼接需要字段的字符串
+            sb.append(name).append("\t")
+                    .append(code).append("\t")
+                    .append(type).append("\t")
+//                    .append(geometry).append("\t");
+                    .append(geometry).append("\n");
+//                    .append(month).append("\t")
+//                    .append(adcode).append("\n");
+        }
+        System.out.println(new Date() +"：json解析完成");
+        return sb.toString();
+    }
 
     /**
-     * 解析json文件为String
+     * 解析json文件为String，F格式
      * @param filePath
      * @return
      *
@@ -116,7 +162,7 @@ public class JsonParseDemo extends UDF {
 
 
     /**
-     * 解析json文件为String,接入高德api
+     * 解析json文件为String,接入高德api，高德格式
      * @param filePath
      * @return
      *

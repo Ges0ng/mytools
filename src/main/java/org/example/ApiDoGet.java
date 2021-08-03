@@ -33,6 +33,7 @@ public class ApiDoGet {
         Map<String, String> querys = new HashMap<>();
         querys.put("key", appcode);
         querys.put("location",jwd);
+        //有限定条件
         querys.put("poitype","120201|120202|060100|060101|060102|170300|090100|090101|090102|120100|130100|130101|130102|130103|130104|130105|130106|130107|141200|141201|141202||141203|141204|141205|141206|120300|120301|120302|120303|120304");
         querys.put("radius","1000");
         querys.put("extensions","all");
