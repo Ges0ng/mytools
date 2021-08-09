@@ -27,11 +27,11 @@ public class GetWalkDistance extends UDF {
         return Integer.toString(sum);
     }
 
-    public static void main(String[] args) {
-        String foot = "步行,普通公交线路,普通公交线路/普通公交线路,步行";
-        String distance = "194,3081,9848/9815,138";
-        GetWalkDistance getWalkDistance = new GetWalkDistance();
-        String evaluate = getWalkDistance.evaluate(foot, distance);
-        System.out.println(evaluate);
-    }
+//    public static void main(String[] args) {
+//        String foot = "步行,普通公交线路,普通公交线路/普通公交线路,步行";
+//        String distance = "194,3081,9848/9815,138";
+//        GetWalkDistance getWalkDistance = new GetWalkDistance();
+//        String evaluate = getWalkDistance.evaluate(foot, distance);
+//        System.out.println(evaluate);
+//    }
 }
