@@ -1,33 +1,16 @@
-
-SELECT
-z2.station_id,
-CASE WHEN (z1.num/z2.total_num) IS NULL THEN 0 ELSE (z1.num/z2.total_num) END AS 接驳线路小区可达率
-FROM (
--- 距离轨道站点3000m内的接驳公交线路内的站点所在小区数量
-  SELECT station_id,count(DISTINCT cellcode) as num FROM (
-    SELECT station_id,route_id,stop_id,PolygonAoiMatch(lng,lat,"0101") AS cellcode,SphereDistance(gdzd_lng,gdzd_lat,lng,lat) as distance FROM (
-    -- 与轨道接驳的公交线路站点
-      SELECT t1.station_id,SPLIT_PART(t1.location,",",1) AS gdzd_lng,SPLIT_PART(t1.location,",",2) as gdzd_lat,t1.route_id,t2.stop_id,t3.lng,t3.lat FROM
-      (SELECT DISTINCT station_id,route_id,location from cq_sjzypt_dwd.dwd_ts_bas_rdnet_subway_station_exit_info WHERE month=202106) t1
-      LEFT JOIN
-      (SELECT *,SPLIT_PART(route_id,"_",1) as route_id_split FROM tocc_cloud_500000.dwd_ts_rltn_bus_route_stop_info where month=202106) t2
-      ON t1.route_id=t2.route_id_split
-      LEFT JOIN
-      (SELECT stop_id,lng,lat FROM cq_sjzypt_dwd.dwd_ts_bas_bus_stop_info where month=202106) t3
-      ON t2.stop_id = t3.stop_id
-    )) WHERE distance<=3000 GROUP BY station_id
-) z1
-
-RIGHT JOIN (
--- 每个轨道站点3000m内所有小区数量
-  SELECT station_id,count(DISTINCT tfcunit_id) as total_num FROM (
-  (SELECT k2.station_id,k1.tfcunit_id,k1.tfcunit_name,SphereDistance(k1.center_coor_lng,k1.center_coor_lat,k2.lng,k2.lat) as distance FROM
-  -- 所有交通小区,中心点经纬度
-  (SELECT *,SPLIT_PART(center_coor,',',1) as center_coor_lng,SPLIT_PART(center_coor,',',2) as center_coor_lat,1 as flag FROM ads_gjxwyhxt_jtqyxq_df WHERE month=202106) k1
-  LEFT JOIN
-  -- 191个轨道站点的信息经纬度
-  (SELECT DISTINCT station_id,lng,lat,village,1 as flag FROM ads_gdgjjbyhfxxt_gdzdxx_df where month=202106) k2
-  ON k1.flag=k2.flag)
-  ) WHERE distance<=3000 GROUP BY station_id
-) z2
-ON z1.station_id = z2.station_id;
+stat_month	varchar	50	0	-1	0	0	0				业务⽉份yyyymm			utf8	utf8_general_ci	0	0	0	0	0	0	0
+fo_tfcunit_id	varchar	50	0	-1	0	0	0				⽗O交通区域ID			utf8	utf8_general_ci	0	0	0	0	0	0	0
+fd_tfcunit_id	varchar	50	0	-1	0	0	0				父D交通区域ID			utf8	utf8_general_ci	0	0	0	0	0	0	0
+o_tfcunit_id	varchar	50	0	-1	0	0	0				O交通区域ID			utf8	utf8_general_ci	0	0	0	0	0	0	0
+d_tfcunit_id	varchar	50	0	-1	0	0	0				D交通区域ID			utf8	utf8_general_ci	0	0	0	0	0	0	0
+day_period_no	bigint	20	0	-1	0	0	0				时间段：1:早⾼峰 3：晚⾼峰 -1全天					0	0	0	0	0	0	0
+trl_type_no	bigint	20	0	-1	0	0	0				交通⽅式1公交2地铁3驾车					0	0	0	0	0	0	0
+trl_time_distribute	text	0	0	-1	0	0	0				出⾏时间特征分布 格式08:00,50;08:15,60			utf8	utf8_general_ci	0	0	0	0	0	0	0
+time_period_ratio	longtext	0	0	-1	0	0	0				出行时间段分布(1:0-10,2:11-20,3:21-30,4:31-40,4:>40) 格式 时间片1:1,0.3;2,0.5...|时间片2:1,0.3;2,0.5...			utf8	utf8_general_ci	0	0	0	0	0	0	0
+trl_flow	text	0	0	-1	0	0	0				出行人次分布 格式: 时间片1,人数1;时间片2,人数2...			utf8	utf8_general_ci	0	0	0	0	0	0	0
+month	varchar	50	0	-1	0	0	0				月份			utf8	utf8_general_ci	0	0	0	0	0	0	0
+tp	varchar	50	0	-1	0	0	0				时间⽚分区			utf8	utf8_general_ci	0	0	0	0	0	0	0
+adcode	varchar	50	0	-1	0	0	0				城市编号			utf8	utf8_general_ci	0	0	0	0	0	0	0
+spfo_tfcunit_id	varchar	50	0	-1	0	0	0				父O特殊区域ID 99			utf8	utf8_general_ci	0	0	0	0	0	0	0
+spfd_tfcunit_id	varchar	50	0	-1	0	0	0				父D特殊区域ID 99			utf8	utf8_general_ci	0	0	0	0	0	0	0
+tfcunit_type	varchar	50	0	-1	0	0	0				区域类型 0103⼤区 0102中区 0101⼩区			utf8	utf8_general_ci	0	0	0	0	0	0	0
