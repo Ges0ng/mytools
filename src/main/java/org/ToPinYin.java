@@ -1,4 +1,4 @@
-package org.example;
+package org;
 
 import com.aliyun.odps.udf.UDF;
 import net.sourceforge.pinyin4j.PinyinHelper;

@@ -1,4 +1,4 @@
-package org.example;
+package org;
 
 import com.aliyun.odps.udf.UDF;
 import org.apache.commons.lang.StringUtils;
