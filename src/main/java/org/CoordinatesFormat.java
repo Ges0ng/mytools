@@ -46,11 +46,13 @@ public class CoordinatesFormat {
                 .replace("] [", ",")
                 .replace("[[[", "MULTIPOLYGON(((")
                 .replace("]]]", ")))")
-                .replace("[","").replace("]","")
+                .replace("[", "")
+                .replace("]", "")
                 ;
     }
 
     /**
+     *
      * 格式转换
      * @param coordinates
      * @return
