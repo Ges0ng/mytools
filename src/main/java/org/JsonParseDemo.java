@@ -17,17 +17,17 @@ import java.util.Date;
  */
 public class JsonParseDemo extends UDF {
 
-    private static final String fileName = "中区";
+    private static final String fileName = "乡镇级";
 
     /**
      * 读取的文件地址
      */
-    private static final String READ_FILEPATH = "C:\\Users\\zgh98\\Desktop\\cq数据\\7.16中区\\" + fileName + ".geojson";
+    private static final String READ_FILEPATH = "D:\\项目\\嘉善\\区域数据\\" + fileName + ".geojson";
 
     /**
      * 输出的文件地址
      */
-    private static final String WRITE_FILEPATH = "C:\\Users\\zgh98\\Desktop\\cq数据\\7.16中区\\中区.txt";
+    private static final String WRITE_FILEPATH = "D:\\项目\\嘉善\\区域数据\\" + fileName + ".txt";
 
     /**
      * 用ThreadLocal记录过程时间
@@ -35,16 +35,13 @@ public class JsonParseDemo extends UDF {
     static ThreadLocal<Long>  startTime = new ThreadLocal<>();
 
 
-
     public static void main(String[] args) {
 
         //解析json
         String content = jsonParse_name(READ_FILEPATH);
-        System.out.println(content);
+//        System.out.println(content);
 //        //输出到文件
-//        write(WRITE_FILEPATH, content);
-
-
+        write(WRITE_FILEPATH, content);
 
 //        gaodeApi(READ_FILEPATH,WRITE_FILEPATH);
     }
@@ -84,34 +81,42 @@ public class JsonParseDemo extends UDF {
 
         StringBuilder sb = new StringBuilder();
         //拼接第一行的字段
-        sb.append("name"+"\t"+"code"+"\t"+"type"+"\t"+"coordinates"+"\n");
+        sb.append("area"+"\t"+"name"+"\t"+"adcode"+"\t"+"type"+"\t"+"center"+"\t"+"coordinates"+"\n");
 //        .append("month"+"\t"+"adcode"+"\n");
         //遍历数组数据
         for (int i = 0; i < features.size(); i++) {
             //获取最外层features
             JSONObject singleFeatures = features.getJSONObject(i);
             //获取properties中的Name和code
-            Object name = singleFeatures.getJSONObject("properties").get("Name");         //不同情况下
-            Object code = singleFeatures.getJSONObject("properties").get("code");
-//            Object name = singleFeatures.getJSONObject("properties").get("F");
-//            Object code = singleFeatures.getJSONObject("properties").get("ID");
+            Object name = singleFeatures.getJSONObject("properties").get("STREET");         //不同情况下
+            Object area = singleFeatures.getJSONObject("properties").get("AREA");         //不同情况下
+            Object yyname = singleFeatures.getJSONObject("properties").get("NAME");         //不同情况下
+
+            Object code = singleFeatures.getJSONObject("properties").get("adcode");
+
             //type固定内容
             Object type = "0102";
-            Object month = "202106";
-            Object adcode = "500000";
+//            Object adcode = "500000";
             //遍历geometry获取coordinates
             Object geometry = singleFeatures.getJSONObject("geometry").get("coordinates");
+            geometry.toString().replace(" ","");
+
+//            转换中心点
+            String center = AreaCoorsCenter.evaluate(AreaCoorsCenter.replace(geometry.toString()));
+
             //拼接需要字段的字符串
-            sb.append(name).append("\t")
+            sb.append(area).append("\t")
+                    .append(name).append("\t")
                     .append(code).append("\t")
                     .append(type).append("\t")
-//                    .append(geometry).append("\t");
+                    .append(center).append("\t")
                     .append(geometry).append("\n");
 //                    .append(month).append("\t")
 //                    .append(adcode).append("\n");
         }
         System.out.println(new Date() +"：json解析完成");
         return sb.toString();
+
     }
 
     /**
@@ -305,12 +310,12 @@ public class JsonParseDemo extends UDF {
         }
     }
 
-    private static void write(String filePath, String content,boolean flag) {
+    private static void write(String filePath, String content,boolean noCover) {
         FileWriter fileWriter = null;
         try {
 
             // true表示不覆盖原来的内容，而是加到文件的后面。若要覆盖原来的内容，直接省略这个参数就好
-            fileWriter = new FileWriter(filePath, flag);
+            fileWriter = new FileWriter(filePath, noCover);
             //打印内容
             fileWriter.write(content);
             System.out.println(new Date() + "：文件输出成功");

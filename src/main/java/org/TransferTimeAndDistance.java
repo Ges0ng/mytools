@@ -21,7 +21,8 @@ public class TransferTimeAndDistance extends UDF {
         double time = 0;
         int transCount = 0;
         for (int i = 1; i < walkSplit.length - 1; i++) {
-            if (walkSplit[i - 1].contains("公交") && "步行".equals(walkSplit[i]) && walkSplit[i + 1].contains("公交")) {
+            if (walkSplit[i - 1].contains("公交") && "步行".equals(walkSplit[i])
+                    && walkSplit[i + 1].contains("公交")) {
                 transCount ++;
                 sum += Integer.parseInt(num[i]);
                 time += Double.parseDouble(times[i]);
