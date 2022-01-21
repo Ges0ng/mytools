@@ -1,15 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="GROUP_BY_SEVERITY" value="true" />
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="73fbce8e-1295-483e-a871-0989ced8d1e2" name="Default Changelist" comment="pom添加依赖">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/exception/RRException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/WCMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/WCReducer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/WordCount.java" beforeDir="false" />
+      <change afterPath="D:/项目/环境和账号/emr_tools/emr_tools/EMR_Tools.iml" afterDir="false" />
+      <change afterPath="D:/项目/环境和账号/emr_tools/emr_tools/src/main/java/com/aliyun/publictransport/odps/udf/DepArrFlowFusion.java" afterDir="false" />
+      <change afterPath="D:/项目/环境和账号/emr_tools/emr_tools/src/main/java/com/aliyun/publictransport/odps/udf/FlowDistribution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_belerweb_pinyin4j_2_5_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/demo.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/InputFile.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ReadFile.java" beforeDir="false" />
+      <change beforePath="D:/项目/环境和账号/emr_tools/emr_tools/.idea/codeStyles/Project.xml" beforeDir="false" />
+      <change beforePath="D:/项目/环境和账号/emr_tools/emr_tools/.idea/compiler.xml" beforeDir="false" afterPath="D:/项目/环境和账号/emr_tools/emr_tools/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="D:/项目/环境和账号/emr_tools/emr_tools/.idea/dbnavigator.xml" beforeDir="false" />
+      <change beforePath="D:/项目/环境和账号/emr_tools/emr_tools/.idea/encodings.xml" beforeDir="false" afterPath="D:/项目/环境和账号/emr_tools/emr_tools/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="D:/项目/环境和账号/emr_tools/emr_tools/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="D:/项目/环境和账号/emr_tools/emr_tools/.idea/misc.xml" beforeDir="false" afterPath="D:/项目/环境和账号/emr_tools/emr_tools/.idea/misc.xml" afterDir="false" />
+      <change beforePath="D:/项目/环境和账号/emr_tools/emr_tools/.idea/vcs.xml" beforeDir="false" afterPath="D:/项目/环境和账号/emr_tools/emr_tools/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="D:/项目/环境和账号/emr_tools/emr_tools/.idea/workspace.xml" beforeDir="false" afterPath="D:/项目/环境和账号/emr_tools/emr_tools/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="D:/项目/环境和账号/emr_tools/emr_tools/emr_tools.iml" beforeDir="false" />
+      <change beforePath="D:/项目/环境和账号/emr_tools/emr_tools/pom.xml" beforeDir="false" afterPath="D:/项目/环境和账号/emr_tools/emr_tools/pom.xml" afterDir="false" />
+      <change beforePath="D:/项目/环境和账号/emr_tools/emr_tools/src/main/java/com.jillesvangurp/geo/GeoGeometryUtils.java" beforeDir="false" afterPath="D:/项目/环境和账号/emr_tools/emr_tools/src/main/java/com.jillesvangurp/utils/GeoGeometryUtils.java" afterDir="false" />
+      <change beforePath="D:/项目/环境和账号/emr_tools/emr_tools/src/main/java/com.jillesvangurp/geo/GeoHashUtils.java" beforeDir="false" afterPath="D:/项目/环境和账号/emr_tools/emr_tools/src/main/java/com.jillesvangurp/utils/GeohashUtilsTool.java" afterDir="false" />
+      <change beforePath="D:/项目/环境和账号/emr_tools/emr_tools/src/main/java/com.jillesvangurp/geo/LineUtils.java" beforeDir="false" afterPath="D:/项目/环境和账号/emr_tools/emr_tools/src/main/java/com.jillesvangurp/utils/LineUtils.java" afterDir="false" />
+      <change beforePath="D:/项目/环境和账号/emr_tools/emr_tools/src/main/java/com/aliyun/publictransport/emrTools/hive/DateFormat.java" beforeDir="false" afterPath="D:/项目/环境和账号/emr_tools/emr_tools/src/main/java/com/aliyun/publictransport/odps/udf/DateFormat.java" afterDir="false" />
+      <change beforePath="D:/项目/环境和账号/emr_tools/emr_tools/src/main/java/com/aliyun/publictransport/emrTools/hive/GeohashDecode.java" beforeDir="false" afterPath="D:/项目/环境和账号/emr_tools/emr_tools/src/main/java/com/aliyun/publictransport/odps/udf/GeohashDecode.java" afterDir="false" />
+      <change beforePath="D:/项目/环境和账号/emr_tools/emr_tools/src/main/java/com/aliyun/publictransport/emrTools/hive/GeohashEncode.java" beforeDir="false" afterPath="D:/项目/环境和账号/emr_tools/emr_tools/src/main/java/com/aliyun/publictransport/odps/udf/GeohashEncode.java" afterDir="false" />
+      <change beforePath="D:/项目/环境和账号/emr_tools/emr_tools/src/main/java/com/aliyun/publictransport/emrTools/hive/GeohashForPolygon.java" beforeDir="false" afterPath="D:/项目/环境和账号/emr_tools/emr_tools/src/main/java/com/aliyun/publictransport/odps/udf/GeohashForPolygon.java" afterDir="false" />
+      <change beforePath="D:/项目/环境和账号/emr_tools/emr_tools/src/main/java/com/aliyun/publictransport/emrTools/hive/IndexSliceToTime.java" beforeDir="false" afterPath="D:/项目/环境和账号/emr_tools/emr_tools/src/main/java/com/aliyun/publictransport/odps/udf/IndexSliceToTime.java" afterDir="false" />
+      <change beforePath="D:/项目/环境和账号/emr_tools/emr_tools/src/main/java/com/aliyun/publictransport/emrTools/hive/PolygonTrans.java" beforeDir="false" afterPath="D:/项目/环境和账号/emr_tools/emr_tools/src/main/java/com/aliyun/publictransport/odps/udf/PolygonTrans.java" afterDir="false" />
+      <change beforePath="D:/项目/环境和账号/emr_tools/emr_tools/src/main/java/com/aliyun/publictransport/emrTools/hive/SphereDistance.java" beforeDir="false" afterPath="D:/项目/环境和账号/emr_tools/emr_tools/src/main/java/com/aliyun/publictransport/odps/udf/SphereDistance.java" afterDir="false" />
+      <change beforePath="D:/项目/环境和账号/emr_tools/emr_tools/src/main/java/com/aliyun/publictransport/emrTools/hive/StringContain.java" beforeDir="false" afterPath="D:/项目/环境和账号/emr_tools/emr_tools/src/main/java/com/aliyun/publictransport/odps/udf/StringContain.java" afterDir="false" />
+      <change beforePath="D:/项目/环境和账号/emr_tools/emr_tools/src/main/java/com/aliyun/publictransport/emrTools/hive/TimeToDayPeriod.java" beforeDir="false" afterPath="D:/项目/环境和账号/emr_tools/emr_tools/src/main/java/com/aliyun/publictransport/odps/udf/TimeToDayPeriod.java" afterDir="false" />
+      <change beforePath="D:/项目/环境和账号/emr_tools/emr_tools/src/main/java/com/aliyun/publictransport/emrTools/hive/TimeToIndexSlice.java" beforeDir="false" afterPath="D:/项目/环境和账号/emr_tools/emr_tools/src/main/java/com/aliyun/publictransport/odps/udf/TimeToIndexSlice.java" afterDir="false" />
+      <change beforePath="D:/项目/环境和账号/emr_tools/emr_tools/src/main/java/com/aliyun/publictransport/emrTools/hive/WeekdayToDoeDate.java" beforeDir="false" afterPath="D:/项目/环境和账号/emr_tools/emr_tools/src/main/java/com/aliyun/publictransport/odps/udf/WeekdayToDoeDate.java" afterDir="false" />
+      <change beforePath="D:/项目/环境和账号/emr_tools/emr_tools/target/EMR_Tools-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="D:/项目/环境和账号/emr_tools/emr_tools/target/EMR_Tools-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="D:/项目/环境和账号/emr_tools/emr_tools/target/classes/com/aliyun/publictransport/emrTools/hive/DateFormat.class" beforeDir="false" />
+      <change beforePath="D:/项目/环境和账号/emr_tools/emr_tools/target/classes/com/aliyun/publictransport/emrTools/hive/GeohashDecode.class" beforeDir="false" />
+      <change beforePath="D:/项目/环境和账号/emr_tools/emr_tools/target/classes/com/aliyun/publictransport/emrTools/hive/GeohashEncode.class" beforeDir="false" />
+      <change beforePath="D:/项目/环境和账号/emr_tools/emr_tools/target/classes/com/aliyun/publictransport/emrTools/hive/GeohashForPolygon.class" beforeDir="false" />
+      <change beforePath="D:/项目/环境和账号/emr_tools/emr_tools/target/classes/com/aliyun/publictransport/emrTools/hive/IndexSliceToTime.class" beforeDir="false" />
+      <change beforePath="D:/项目/环境和账号/emr_tools/emr_tools/target/classes/com/aliyun/publictransport/emrTools/hive/PolygonTrans.class" beforeDir="false" />
+      <change beforePath="D:/项目/环境和账号/emr_tools/emr_tools/target/classes/com/aliyun/publictransport/emrTools/hive/SphereDistance.class" beforeDir="false" />
+      <change beforePath="D:/项目/环境和账号/emr_tools/emr_tools/target/classes/com/aliyun/publictransport/emrTools/hive/StringContain.class" beforeDir="false" />
+      <change beforePath="D:/项目/环境和账号/emr_tools/emr_tools/target/classes/com/aliyun/publictransport/emrTools/hive/TimeToDayPeriod.class" beforeDir="false" />
+      <change beforePath="D:/项目/环境和账号/emr_tools/emr_tools/target/classes/com/aliyun/publictransport/emrTools/hive/TimeToIndexSlice.class" beforeDir="false" />
+      <change beforePath="D:/项目/环境和账号/emr_tools/emr_tools/target/classes/com/aliyun/publictransport/emrTools/hive/WeekdayToDoeDate.class" beforeDir="false" />
+      <change beforePath="D:/项目/环境和账号/emr_tools/emr_tools/target/classes/com/jillesvangurp/geo/GeoGeometryUtils.class" beforeDir="false" />
+      <change beforePath="D:/项目/环境和账号/emr_tools/emr_tools/target/classes/com/jillesvangurp/geo/GeoHashUtils.class" beforeDir="false" />
+      <change beforePath="D:/项目/环境和账号/emr_tools/emr_tools/target/classes/com/jillesvangurp/geo/LineUtils$Line.class" beforeDir="false" />
+      <change beforePath="D:/项目/环境和账号/emr_tools/emr_tools/target/classes/com/jillesvangurp/geo/LineUtils$Point.class" beforeDir="false" />
+      <change beforePath="D:/项目/环境和账号/emr_tools/emr_tools/target/classes/com/jillesvangurp/geo/LineUtils.class" beforeDir="false" />
+      <change beforePath="D:/项目/环境和账号/emr_tools/emr_tools/target/maven-archiver/pom.properties" beforeDir="false" afterPath="D:/项目/环境和账号/emr_tools/emr_tools/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="D:/项目/环境和账号/emr_tools/emr_tools/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="D:/项目/环境和账号/emr_tools/emr_tools/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="D:/项目/环境和账号/emr_tools/emr_tools/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="D:/项目/环境和账号/emr_tools/emr_tools/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +140,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="D:/项目/重庆数据/emr_tools" />
+    <property name="last_opened_file_path" value="D:/项目/环境和账号/emr_tools/emr_tools" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -91,7 +148,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="studioAccounts" />
@@ -107,9 +164,9 @@
       <recent name="org.example" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.LinkAnalysis">
-    <configuration name="AreaCoorsCenter" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.AreaCoorsCenter" />
+  <component name="RunManager" selected="JUnit.AppTest.shouldAnswerWithTrue">
+    <configuration name="PinYinChange" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.PinYinChange" />
       <module name="demo" />
       <extension name="coverage">
         <pattern>
@@ -121,12 +178,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="JsonParseDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.JsonParseDemo" />
-      <module name="demo" />
+    <configuration name="ToPinYin (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.aliyun.base.odps.udf.ToPinYin" />
+      <module name="EMR_Tools" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.*" />
+          <option name="PATTERN" value="com.aliyun.base.odps.udf.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -134,8 +191,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LinkAnalysis" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.LinkAnalysis" />
+    <configuration name="ToPinYin" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.ToPinYin" />
       <module name="demo" />
       <extension name="coverage">
         <pattern>
@@ -160,19 +217,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="demo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.demo" />
-      <module name="demo" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -180,6 +224,22 @@
         </value>
       </option>
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AppTest.shouldAnswerWithTrue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example" />
+      <option name="MAIN_CLASS_NAME" value="org.example.AppTest" />
+      <option name="METHOD_NAME" value="shouldAnswerWithTrue" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -193,11 +253,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AppTest.shouldAnswerWithTrue" />
+        <item itemvalue="Application.PinYinChange" />
+        <item itemvalue="Application.ToPinYin" />
+        <item itemvalue="Application.ToPinYin (1)" />
         <item itemvalue="Application.TransferTimeAndDistance" />
-        <item itemvalue="Application.LinkAnalysis" />
-        <item itemvalue="Application.JsonParseDemo" />
-        <item itemvalue="Application.demo" />
-        <item itemvalue="Application.AreaCoorsCenter" />
       </list>
     </recent_temporary>
   </component>
@@ -313,6 +373,11 @@
       <workItem from="1636447191119" duration="613000" />
       <workItem from="1636447834839" duration="2614000" />
       <workItem from="1636506256522" duration="2462000" />
+      <workItem from="1642067202513" duration="159000" />
+      <workItem from="1642122920757" duration="1192000" />
+      <workItem from="1642130735543" duration="2953000" />
+      <workItem from="1642401504392" duration="3474000" />
+      <workItem from="1642469598499" duration="2934000" />
     </task>
     <task id="LOCAL-00001" summary="python 工具类">
       <created>1625647014425</created>
@@ -396,6 +461,16 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">

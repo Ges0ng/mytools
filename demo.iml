@@ -178,7 +178,8 @@
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.jaxrs:jackson-jaxrs-base:2.10.5" level="project" />
     <orderEntry type="library" name="Maven: org.apache.hadoop:hadoop-mapreduce-client-jobclient:3.3.1" level="project" />
     <orderEntry type="library" name="Maven: org.apache.hadoop:hadoop-mapreduce-client-common:3.3.1" level="project" />
-    <orderEntry type="library" name="Maven: com.belerweb:pinyin4j:2.5.0" level="project" />
+    <orderEntry type="library" name="Maven: com.belerweb:pinyin4j:2.5.1" level="project" />
+    <orderEntry type="library" name="Maven: com.github.stuxuhai:jpinyin:1.1.7" level="project" />
     <orderEntry type="library" name="Maven: org.python:jython-standalone:2.7.0" level="project" />
     <orderEntry type="library" name="Maven: com.aliyun.odps:odps-sdk-udf:0.29.8-public" level="project" />
     <orderEntry type="library" name="Maven: com.aliyun.odps:odps-sdk-commons:0.29.8-public" level="project" />

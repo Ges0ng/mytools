@@ -1,8 +1,7 @@
 package org.example;
 
+import org.ToPinYin;
 import org.junit.Test;
-
-import static org.junit.Assert.assertTrue;
 
 /**
  * Unit test for simple App.
@@ -15,6 +14,9 @@ public class AppTest
     @Test
     public void shouldAnswerWithTrue()
     {
-        assertTrue( true );
+
+        ToPinYin toPinYin = new ToPinYin();
+        System.out.println(toPinYin.evaluate("暗杀说的话"));
+//        assertTrue( true );
     }
 }
