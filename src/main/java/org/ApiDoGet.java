@@ -53,9 +53,7 @@ public class ApiDoGet {
             HttpEntity entity = response.getEntity();
             String s = EntityUtils.toString(entity, "utf-8");
         System.out.println(EntityUtils.toString(entity, "utf-8"));
-
             return s;
-
     }
 
     public static void main(String[] args) {
