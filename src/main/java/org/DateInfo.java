@@ -89,7 +89,7 @@ public class DateInfo {
             Object dateType = value.get("type");
             Object dateName = value.get("name");
             //当月总天数
-            int dayCnt = getDaysByYearMonth(2022, Integer.parseInt(statDate.substring(4, 6).replace("0", "")));
+            int dayCnt = getDaysByYearMonth(Integer.parseInt(YEAR), Integer.parseInt(statDate.substring(4, 6).replace("0", "")));
             sb.append(statDate).append("\t")
                     .append(dateType).append("\t")
                     .append(dateName).append("\t")
