@@ -1,7 +1,9 @@
 package org;
 
+import cn.hutool.core.util.ObjectUtil;
 import cn.hutool.http.HttpUtil;
 import com.alibaba.fastjson.JSONObject;
+import org.exception.RRException;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -17,10 +19,14 @@ import java.util.Map;
  */
 
 public class DateInfo {
-    //指定年份
+    /**指定年份*/
     final static String YEAR = "2022";
-    //指定输出文件名
+
+    /**指定输出文件名*/
     final static String FILE = "dwd_ts_bas_doe_date_info.txt";
+
+    /**服务器状态为0则服务正常*/
+    final static String FLAG = "0";
 
     public static void main(String[] args) {
         //从api中获取数据
@@ -61,30 +67,35 @@ public class DateInfo {
      *   }
      * }
      */
-    public static String dateParse(String data){
-        StringBuilder sb = new StringBuilder();
-        //拼接第一行的字段
-        sb.append("stat_date"+"\t"+"date_type"+"\t"+"date_name"+"\t"+"day_cnt"+"\t"+"data_version"+"\n");
+    public static String dateParse(String data) throws RRException {
         JSONObject jsonObject = JSONObject.parseObject(data);
+        String serverStatus = jsonObject.get("code").toString();
+        //如果服务器返回状态为0服务正常，-1服务出错
+        if (ObjectUtil.notEqual(FLAG,serverStatus)) {
+            throw new RRException("服务器状态异常");
+        }
+
         JSONObject type = jsonObject.getJSONObject("type");
+        //拼接第一行的字段
+        StringBuilder sb = new StringBuilder();
+        sb.append("stat_date" + "\t" + "date_type" + "\t" + "date_name" + "\t" + "day_cnt" + "\t" + "data_version" + "\n");
+
         //因为每一串json的key都对应着不同的日期，所以不能直接处理，需要放到Map中再处理
         for (Map.Entry<String, Object> entry : type.entrySet()) {
             //获取主键
-            String stat_date = entry.getKey().replace("-","");
+            String statDate = entry.getKey().replace("-", "");
             //获取主键对应的value
             JSONObject value = (JSONObject) entry.getValue();
-            Object date_type = value.get("type");
-            Object date_name = value.get("name");
+            Object dateType = value.get("type");
+            Object dateName = value.get("name");
             //当月总天数
-            int day_cnt = getDaysByYearMonth(2022, Integer.parseInt(stat_date.substring(4, 6).replace("0","")));
-
-            sb.append(stat_date).append("\t")
-                    .append(date_type).append("\t")
-                    .append(date_name).append("\t")
-                    .append(day_cnt).append("\t")
-                    .append("2022").append("\n");
+            int dayCnt = getDaysByYearMonth(2022, Integer.parseInt(statDate.substring(4, 6).replace("0", "")));
+            sb.append(statDate).append("\t")
+                    .append(dateType).append("\t")
+                    .append(dateName).append("\t")
+                    .append(dayCnt).append("\t")
+                    .append(YEAR).append("\n");
         }
-
         return sb.toString();
     }
 
@@ -111,9 +122,9 @@ public class DateInfo {
     private static void write(String filePath, String content) {
         FileWriter fileWriter = null;
         try {
-            boolean fugai = false;
+            boolean cover = false;
             // true表示不覆盖原来的内容，而是加到文件的后面。若要覆盖原来的内容，直接省略这个参数就好
-            fileWriter = new FileWriter(filePath, fugai);
+            fileWriter = new FileWriter(filePath, cover);
             //打印内容
             fileWriter.write(content);
             System.out.println(new Date() + "：文件输出成功");
@@ -130,25 +141,4 @@ public class DateInfo {
         }
     }
 
-    private static void write(String filePath, String content,boolean noCover) {
-        FileWriter fileWriter = null;
-        try {
-
-            // true表示不覆盖原来的内容，而是加到文件的后面。若要覆盖原来的内容，直接省略这个参数就好
-            fileWriter = new FileWriter(filePath, noCover);
-            //打印内容
-            fileWriter.write(content);
-            System.out.println(new Date() + "：文件输出成功");
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                assert fileWriter != null;
-                fileWriter.flush();
-                fileWriter.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-    }
 }
