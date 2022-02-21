@@ -17,12 +17,12 @@ import java.util.Date;
  */
 public class JsonParseDemo extends UDF {
 
-    private static final String fileName = "乡镇级";
+    private static final String fileName = "嘉善县小区社区_FeaturesToJSON";
 
     /**
      * 读取的文件地址
      */
-    private static final String READ_FILEPATH = "D:\\项目\\嘉善\\区域数据\\" + fileName + ".geojson";
+    private static final String READ_FILEPATH = "D:\\项目\\嘉善\\区域数据\\" + fileName + ".json";
 
     /**
      * 输出的文件地址
@@ -81,38 +81,36 @@ public class JsonParseDemo extends UDF {
 
         StringBuilder sb = new StringBuilder();
         //拼接第一行的字段
-        sb.append("area"+"\t"+"name"+"\t"+"adcode"+"\t"+"type"+"\t"+"center"+"\t"+"coordinates"+"\n");
+        sb.append("name"+"\t"+"adcode"+"\t"+"type"+"\t"+"center"+"\t"+"coordinates"+"\n");
 //        .append("month"+"\t"+"adcode"+"\n");
         //遍历数组数据
         for (int i = 0; i < features.size(); i++) {
             //获取最外层features
             JSONObject singleFeatures = features.getJSONObject(i);
             //获取properties中的Name和code
-            Object name = singleFeatures.getJSONObject("properties").get("STREET");         //不同情况下
-            Object area = singleFeatures.getJSONObject("properties").get("AREA");         //不同情况下
-            Object yyname = singleFeatures.getJSONObject("properties").get("NAME");         //不同情况下
+            Object name = singleFeatures.getJSONObject("properties").get("XZQMC");
+            Object lng = singleFeatures.getJSONObject("properties").get("X");
+            Object lat = singleFeatures.getJSONObject("properties").get("Y");
 
-            Object code = singleFeatures.getJSONObject("properties").get("adcode");
+            Object code = singleFeatures.getJSONObject("properties").get("XZQDM");
 
             //type固定内容
-            Object type = "0102";
-//            Object adcode = "500000";
+            Object type = "0101";
             //遍历geometry获取coordinates
             Object geometry = singleFeatures.getJSONObject("geometry").get("coordinates");
             geometry.toString().replace(" ","");
 
-//            转换中心点
-            String center = AreaCoorsCenter.evaluate(AreaCoorsCenter.replace(geometry.toString()));
+            //转换中心点
+//            String center = AreaCoorsCenter.evaluate(AreaCoorsCenter.replace(geometry.toString()));
+            String center = lng+","+lat;
+
 
             //拼接需要字段的字符串
-            sb.append(area).append("\t")
-                    .append(name).append("\t")
+            sb.append(name).append("\t")
                     .append(code).append("\t")
                     .append(type).append("\t")
                     .append(center).append("\t")
                     .append(geometry).append("\n");
-//                    .append(month).append("\t")
-//                    .append(adcode).append("\n");
         }
         System.out.println(new Date() +"：json解析完成");
         return sb.toString();
