@@ -1,2 +1,0 @@
-select count(distinct car_id) from cq_sjzypt_stg.TABtmp_stg_bas_bus_gps_info_deltaLE1_all
-where dt =202107 and split_part(split_part(gps_time,' ',2),':',1)=9  and gpsspeed>0 and split_part(gps_time,' ',1) = '2021-07-18';

@@ -1,4 +1,4 @@
-package org;
+package odps.utils;
 
 import com.aliyun.odps.udf.UDF;
 import com.github.stuxuhai.jpinyin.PinyinException;

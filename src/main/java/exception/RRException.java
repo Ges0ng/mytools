@@ -1,4 +1,4 @@
-package org.exception;
+package exception;
 
 import cn.hutool.http.HttpStatus;
 

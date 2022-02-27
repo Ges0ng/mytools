@@ -1,17 +1,17 @@
-package org;
+package parse;
 
 import java.io.*;
 import java.util.Date;
 
-import static org.JsonParseDemo.getFileEncode;
+import static parse.JsonParseDemo.getFileEncode;
 
 /**
  * @author zhanggh
- * @description: 坐标格式转换
+ * @description: 坐标格式转换为wkt格式
  * @date 2021/7/12 10:11
  */
 
-public class CoordinatesFormat {
+public class CoordinatesToWktFormat {
 
     /**
      * 读取的文件地址

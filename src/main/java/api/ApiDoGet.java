@@ -1,5 +1,6 @@
-package org;
+package api;
 
+import org.HttpUtils;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.util.EntityUtils;
@@ -10,7 +11,7 @@ import java.util.Map;
 /**
  * 调用高德api获取json 传参 经度，纬度
  * @author zhanggh
- * @description: TODO
+ * @description: 获取经纬度附近最近的poi点
  * @date 2021/6/21 21:12
  */
 public class ApiDoGet {

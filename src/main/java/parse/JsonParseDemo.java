@@ -1,8 +1,10 @@
-package org;
+package parse;
 
+import api.ApiDoGet;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.aliyun.odps.udf.UDF;
+import odps.utils.AreaCoorsCenter;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.text.StrBuilder;
 import org.mozilla.universalchardet.UniversalDetector;
@@ -46,7 +48,11 @@ public class JsonParseDemo extends UDF {
 //        gaodeApi(READ_FILEPATH,WRITE_FILEPATH);
     }
 
-
+    /**
+     * 先通过高德接口获得数据再转换
+     * @param read_path
+     * @param write_path
+     */
     public static void gaodeApi(String read_path,String write_path){
         String content = null;
         try {

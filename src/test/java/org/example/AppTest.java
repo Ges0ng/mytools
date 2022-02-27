@@ -1,6 +1,6 @@
 package org.example;
 
-import org.ToPinYin;
+import odps.utils.ToPinYin;
 import org.junit.Test;
 
 /**
