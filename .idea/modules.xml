@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://D:/项目/环境和账号/emr_tools/emr_tools/EMR_Tools.iml" filepath="D:/项目/环境和账号/emr_tools/emr_tools/EMR_Tools.iml" />
-      <module fileurl="file://$PROJECT_DIR$/demo.iml" filepath="$PROJECT_DIR$/demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mytools.iml" filepath="$PROJECT_DIR$/mytools.iml" />
     </modules>
   </component>
 </project>

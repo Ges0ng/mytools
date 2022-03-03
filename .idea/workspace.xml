@@ -7,26 +7,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73fbce8e-1295-483e-a871-0989ced8d1e2" name="Default Changelist" comment="小区json格式不同">
+    <list default="true" id="73fbce8e-1295-483e-a871-0989ced8d1e2" name="Default Changelist" comment="文件夹划分">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qywl.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/ApiDoGet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/api/ApiDoGet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/AreaCoorsCenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/odps/utils/AreaCoorsCenter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/CoordinatesFormat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/parse/CoordinatesFormat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/DateInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/odps/utils/DateInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/JsonParseDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/parse/JsonParseDemo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/LinkAnalysis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/odps/utils/LinkAnalysis.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/PinYinChange.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/odps/utils/PinYinChange.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/ToPinYin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/odps/utils/ToPinYin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/TransferTimeAndDistance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/odps/utils/TransferTimeAndDistance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/Xqwl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/odps/utils/Xqwl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/demo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/demo.osql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/exception/RRException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exception/RRException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/requirements.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/tulishe_spider.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/AppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/AppTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/mytools.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,27 +107,17 @@
       <recent name="C:\Users\zgh98\IdeaProjects\demo" />
       <recent name="C:\Users\zgh98\IdeaProjects\demo\src\main\java\org\example" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="org.example" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.CoordinatesToWktFormat">
-    <configuration name="ApiDoGet" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="api.ApiDoGet" />
-      <module name="demo" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="api.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.LineOnTheWay">
     <configuration name="CoordinatesToWktFormat" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="parse.CoordinatesToWktFormat" />
-      <module name="demo" />
+      <module name="mytools" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="api.*" />
@@ -152,12 +128,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="JsonParseDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="parse.JsonParseDemo" />
-      <module name="demo" />
+    <configuration name="LineOnTheWay" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="odps.utils.LineOnTheWay" />
+      <module name="mytools" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="api.*" />
+          <option name="PATTERN" value="odps.utils.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -165,12 +141,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TransferTimeAndDistance" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="odps.utils.TransferTimeAndDistance" />
-      <module name="demo" />
+    <configuration name="ParallelRelationship" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.aliyun.traffic.data.odps.udf.ParallelRelationship" />
+      <module name="EMR_Tools" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="api.*" />
+          <option name="PATTERN" value="com.aliyun.traffic.data.odps.udf.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -178,12 +154,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Xqwl" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="odps.utils.Xqwl" />
-      <module name="demo" />
+    <configuration name="RepeatLength" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.aliyun.publictransport.odps.udf.RepeatLength" />
+      <module name="EMR_Tools" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="api.*" />
+          <option name="PATTERN" value="com.aliyun.publictransport.odps.udf.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TransRepeatStation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.aliyun.publictransport.odps.udf.TransRepeatStation" />
+      <module name="EMR_Tools" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.aliyun.publictransport.odps.udf.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -211,11 +200,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.LineOnTheWay" />
+        <item itemvalue="Application.ParallelRelationship" />
+        <item itemvalue="Application.RepeatLength" />
+        <item itemvalue="Application.TransRepeatStation" />
         <item itemvalue="Application.CoordinatesToWktFormat" />
-        <item itemvalue="Application.ApiDoGet" />
-        <item itemvalue="Application.Xqwl" />
-        <item itemvalue="Application.JsonParseDemo" />
-        <item itemvalue="Application.TransferTimeAndDistance" />
       </list>
     </recent_temporary>
   </component>
@@ -352,7 +341,9 @@
       <workItem from="1645513544337" duration="1989000" />
       <workItem from="1645619138610" duration="9000" />
       <workItem from="1645930709712" duration="106000" />
-      <workItem from="1645933368588" duration="332000" />
+      <workItem from="1645933368588" duration="866000" />
+      <workItem from="1646187336709" duration="9179000" />
+      <workItem from="1646289598566" duration="602000" />
     </task>
     <task id="LOCAL-00001" summary="python 工具类">
       <created>1625647014425</created>
@@ -473,7 +464,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645427637931</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="文件夹划分">
+      <created>1645933947566</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1645933947566</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -494,19 +492,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="dev" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>
@@ -530,7 +516,8 @@
     <MESSAGE value="服务器状态" />
     <MESSAGE value="百米网格围栏，经纬度计算，距离" />
     <MESSAGE value="小区json格式不同" />
-    <option name="LAST_COMMIT_MESSAGE" value="小区json格式不同" />
+    <MESSAGE value="文件夹划分" />
+    <option name="LAST_COMMIT_MESSAGE" value="文件夹划分" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
