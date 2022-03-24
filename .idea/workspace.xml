@@ -7,9 +7,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73fbce8e-1295-483e-a871-0989ced8d1e2" name="Default Changelist" comment="文件夹划分">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/Tree.java" afterDir="false" />
+    <list default="true" id="73fbce8e-1295-483e-a871-0989ced8d1e2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/odps/utils/StageAll.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/odps/utils/LinkAnalysis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/odps/utils/LinkAnalysis.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,12 +52,13 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="yangzehan" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="MIXED" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -83,7 +85,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../python" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/odps/utils" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -112,7 +114,7 @@
       <recent name="org.example" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Tree">
+  <component name="RunManager" selected="Application.LineOnTheWay">
     <configuration name="CoordinatesToWktFormat" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="parse.CoordinatesToWktFormat" />
       <module name="mytools" />
@@ -139,12 +141,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StreamTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.StreamTest" />
-      <module name="mytools" />
+    <configuration name="ParallelRelationship" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.aliyun.traffic.data.odps.udf.ParallelRelationship" />
+      <module name="EMR_Tools" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.*" />
+          <option name="PATTERN" value="com.aliyun.traffic.data.odps.udf.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -152,12 +154,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Tree" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.Tree" />
-      <module name="mytools" />
+    <configuration name="RepeatLength" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.aliyun.publictransport.odps.udf.RepeatLength" />
+      <module name="EMR_Tools" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.*" />
+          <option name="PATTERN" value="com.aliyun.publictransport.odps.udf.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TransRepeatStation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.aliyun.publictransport.odps.udf.TransRepeatStation" />
+      <module name="EMR_Tools" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.aliyun.publictransport.odps.udf.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -173,18 +188,20 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="MaxCompute SQL.demo.osql" />
+      <item itemvalue="Application.ParallelRelationship" />
+      <item itemvalue="Application.RepeatLength" />
+      <item itemvalue="Application.TransRepeatStation" />
       <item itemvalue="Application.CoordinatesToWktFormat" />
       <item itemvalue="Application.LineOnTheWay" />
-      <item itemvalue="MaxCompute SQL.demo.osql" />
-      <item itemvalue="Application.StreamTest" />
-      <item itemvalue="Application.Tree" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Tree" />
-        <item itemvalue="Application.StreamTest" />
         <item itemvalue="Application.LineOnTheWay" />
         <item itemvalue="Application.CoordinatesToWktFormat" />
+        <item itemvalue="Application.TransRepeatStation" />
+        <item itemvalue="Application.RepeatLength" />
+        <item itemvalue="Application.ParallelRelationship" />
       </list>
     </recent_temporary>
   </component>
@@ -326,8 +343,6 @@
       <workItem from="1646289598566" duration="602000" />
       <workItem from="1646297243532" duration="1786000" />
       <workItem from="1646356675589" duration="693000" />
-      <workItem from="1647911901836" duration="1387000" />
-      <workItem from="1648108317657" duration="3439000" />
     </task>
     <task id="LOCAL-00001" summary="python 工具类">
       <created>1625647014425</created>
