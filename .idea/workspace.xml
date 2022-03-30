@@ -188,12 +188,12 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="MaxCompute SQL.demo.osql" />
       <item itemvalue="Application.ParallelRelationship" />
       <item itemvalue="Application.RepeatLength" />
       <item itemvalue="Application.TransRepeatStation" />
       <item itemvalue="Application.CoordinatesToWktFormat" />
       <item itemvalue="Application.LineOnTheWay" />
+      <item itemvalue="MaxCompute SQL.demo.osql" />
     </list>
     <recent_temporary>
       <list>
