@@ -5,7 +5,7 @@ import com.aliyun.odps.udf.UDF;
 
 
 /**
- * @author paracosm
+ * @author zhanggh
  */
 public class Xqwl extends UDF {
 
