@@ -25,22 +25,15 @@ public class PointOnLine extends UDF {
     /**
      * wkt 转geometry
      *
-     * @param wkt
-     * @return
-     * @throws ParseException
      */
     public static Geometry wkt2Geo(String wkt) throws ParseException {
         WKTReader reader = new WKTReader(gf);
-        Geometry geom = reader.read(wkt);
-        return geom;
+        return reader.read(wkt);
     }
 
     /**
      * 计算两个点之间的距离
      *
-     * @param p1
-     * @param p2
-     * @return
      */
     public static double distance(Point p1, Point p2) {
         return distance(p1.getCoordinate(), p2.getCoordinate());
@@ -54,9 +47,6 @@ public class PointOnLine extends UDF {
     /**
      * 计算球面两点距离
      *
-     * @param p1
-     * @param p2
-     * @return
      */
     public static double distance(Coordinate p1, Coordinate p2) {
         // 用haversine公式计算球面两点间的距离。
@@ -72,6 +62,7 @@ public class PointOnLine extends UDF {
         // circle就是一个球体上的切面，它的圆心即是球心的一个周长最大的圆。
         double h = haverSin(vLat) + Math.cos(lat1) * Math.cos(lat2) * haverSin(vLon);
         double distance = 2 * EARTH_RADIUS * Math.asin(Math.sqrt(h));
+        System.out.println(distance);
         return distance;
     }
 
@@ -82,16 +73,15 @@ public class PointOnLine extends UDF {
      * @param start      线起点start
      * @param end        线终点end
      * @param resolution 误差范围m
-     * @return
      */
     public static boolean isPointOnSegment(Point a, Point start, Point end, double resolution) {
         boolean flag = false;
         double startAdis = distance(a, start);
-        System.out.println(startAdis);
+//        System.out.println(startAdis);
         double endADis = distance(a, end);
-        System.out.println(endADis);
+//        System.out.println(endADis);
         double dis = distance(start, end);
-        System.out.println(dis);
+//        System.out.println(dis);
         if (startAdis + endADis >= dis - resolution && startAdis + endADis <= dis + resolution) {
             flag = true;
         }
@@ -103,10 +93,9 @@ public class PointOnLine extends UDF {
      * @param lineCoordinate 线的坐标经纬度串
      * @param pointCoordinate 点的坐标经纬度串
      * @param resolution 精度误差 范围m
-     * @return
      */
     public Integer evaluate(String lineCoordinate,String pointCoordinate,double resolution){
-        Integer flag = -1;
+        int flag = -1;
         try {
             //经纬度串线路和点坐标
             String lineString = "LINESTRING (" + lineCoordinate.replace(",", " ").replace(";", ",") + ")";
@@ -119,11 +108,12 @@ public class PointOnLine extends UDF {
                 Point point = gf.createPoint(coordinate);
                 // 判断点是否在线上  geom.intersects(point)、point.within(geom) 这俩方法都不管用，以1/20分辨率当作误差范围
                 if (isPointOnSegment(point, gf.createPoint(line.getCoordinates()[0]), gf.createPoint(line.getCoordinates()[1]), resolution)) {
-                    System.out.println(point.getCoordinate() + " 在线上");
+//                    System.out.println(point.getCoordinate() + " 在线上");
                     flag=1;
-                } else {
-                    System.err.println(point.getCoordinate() + " 不在线上");
                 }
+//                else {
+//                    System.err.println(point.getCoordinate() + " 不在线上");
+//                }
             }
         } catch (ParseException e) {
             e.printStackTrace();
@@ -136,8 +126,8 @@ public class PointOnLine extends UDF {
         //线几何
         String lineCoordinate = "120.754878,30.774927;120.754323,30.774886;120.754318,30.774886;120.754172,30.774875;120.753889,30.774852";
         //点几何
-        String pointCoordinate = "120.754336 30.774822";
-        pointOnLine.evaluate(lineCoordinate,pointCoordinate,10);
+        String pointCoordinate = "120.754336,30.774822";
+        System.out.println(pointOnLine.evaluate(lineCoordinate, pointCoordinate, 10));
     }
 //    public static void main(String[] args) throws ParseException, IOException {
 //        // 线几何
